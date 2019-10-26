@@ -2,7 +2,6 @@ Bootstrap: docker
 From: ubuntu:latest
 
 %files
-    mpitest.c /opt
     vecdot.c /opt
 
 %environment
@@ -33,4 +32,4 @@ From: ubuntu:latest
     export MANPATH=$MPICH_DIR/share/man:$MANPATH
 
     echo "Compiling the MPI application..."
-    cd /opt && mpicc -o mpitest mpitest.c && mpicc -o vecdot vecdot.c -lm
+    cd /opt && mpicc -o vecdot vecdot.c -lm
