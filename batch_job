@@ -1,0 +1,18 @@
+#!/bin/bash
+##### These lines are for Moab
+#MSUB -l nodes=1
+#MSUB -l partition=quartz
+#MSUB -l walltime=00:02:00
+#MSUB -q pbatch
+#MSUB -A optimiz
+#MSUB -V
+
+##### Launch parallel job using srun
+start=`date +%s%N`
+srun -n2 singularity exec mpich.simg /opt/vecdot
+end=`date +%s%N`
+printf 'Time singularity: %.10f \n' $(((end-start)/1000000))
+start=`date +%s%N`
+srun -n2 ./vecdot
+end=`date +%s%N`
+printf 'Time mpi: %.10f \n' $(((end-start)/1000000))
