@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /* Define length of dot product vectors */
-#define VECLEN 6000000000
+#define VECLEN 6000000
 
 int main (int argc, char* argv[])
 {
