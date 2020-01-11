@@ -23,6 +23,7 @@ From: ubuntu:latest
     mkdir -p /tmp/mpich
     mkdir -p /opt
     # Download
+    #hello there lets see if it can build it
     cd /tmp/mpich && wget -O mpich-$MPICH_VERSION.tar.gz $MPICH_URL && tar xzf mpich-$MPICH_VERSION.tar.gz
     # Compile and install
     cd /tmp/mpich/mpich-$MPICH_VERSION && ./configure --prefix=$MPICH_DIR && make install
